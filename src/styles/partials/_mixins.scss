@@ -1,0 +1,54 @@
+@import "./variables";
+
+@mixin flex($justify: flex-start, $align: flex-start, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin big-tablet {
+  @media screen and (min-width: $big-tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin btn($color, $background-color, $border) {
+  padding: 1.5rem 3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $color;
+  border-radius: 0;
+  background-color: $background-color;
+  border: $border;
+
+  &:hover {
+    color: $background-color;
+    background-color: $color;
+    transition: 0.3s;
+  }
+}
+
+@mixin section-title {
+  color: $fnavy;
+  font-size: 2.4rem;
+  margin: 2rem 0;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+
+  @include big-tablet {
+    font-size: 5rem;
+  }
+}

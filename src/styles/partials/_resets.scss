@@ -1,0 +1,36 @@
+@import "./mixins";
+
+// // RESETS
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-padding-top: 25rem !important;
+}
+
+body {
+  font-size: 1.6rem;
+  margin: 0;
+  position: relative;
+  // height: 100vw;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+li {
+  font-family: "Montserrat", sans-serif !important;
+  color: $dark-grey;
+}
