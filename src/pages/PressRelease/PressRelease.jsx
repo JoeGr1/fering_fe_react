@@ -13,7 +13,7 @@ const PressRelease = ({ id }) => {
   const getPage = async () => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_WORDPRESS_API_URL}/pages/${id}`
+        `${process.env.REACT_APP_ACF_WORDPRESS_API_URL}/pages/${id}`
       );
       setPage(response.data);
     } catch (error) {

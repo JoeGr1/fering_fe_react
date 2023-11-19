@@ -6,6 +6,8 @@ import axios from "axios";
 
 import Banner from "../../components/Banner/Banner";
 
+import { GET_PAGE } from "../../utils/apiCalls";
+
 const OurStory = ({ id }) => {
   const [page, setPage] = useState(null);
   const [gotPage, setGotPage] = useState(false);
@@ -13,10 +15,9 @@ const OurStory = ({ id }) => {
 
   const getPage = async () => {
     try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_WORDPRESS_API_URL}/pages/${id}`
-      );
+      const response = await GET_PAGE(id);
       setPage(response.data);
+      setGotPage("true");
     } catch (error) {
       console.error(error);
     }
@@ -25,7 +26,6 @@ const OurStory = ({ id }) => {
   useEffect(() => {
     try {
       getPage();
-      setGotPage("true");
     } catch (err) {
       console.log(err);
     }
@@ -43,10 +43,8 @@ const OurStory = ({ id }) => {
 
   return (
     <div>
-      <p>{!acf && "Loading..."}</p>
-      <p>{acf && acf.story_intro_title.one}</p>
-      <p>{acf && acf.story_intro_title.two}</p>
-      <p>{acf && acf.story_intro_title.three}</p>
+      <p>{!gotPage && "Loading..."}</p>
+      {gotPage && <Banner acf={acf} />}
     </div>
   );
 };

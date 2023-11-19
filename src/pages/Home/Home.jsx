@@ -5,6 +5,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import Banner from "../../components/Banner/Banner";
+import Intro from "../../components/Home/Intro/Intro";
+
+import { GET_PAGE } from "../../utils/apiCalls";
 
 const Home = ({ id }) => {
   const [page, setPage] = useState(null);
@@ -13,10 +16,9 @@ const Home = ({ id }) => {
 
   const getPage = async () => {
     try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_WORDPRESS_API_URL}/pages/${id}`
-      );
+      const response = await GET_PAGE(id);
       setPage(response.data);
+      setGotPage("true");
     } catch (error) {
       console.error(error);
     }
@@ -25,7 +27,6 @@ const Home = ({ id }) => {
   useEffect(() => {
     try {
       getPage();
-      setGotPage("true");
     } catch (err) {
       console.log(err);
     }
@@ -43,7 +44,9 @@ const Home = ({ id }) => {
 
   return (
     <div>
-      <Banner acf={acf} />
+      <p>{!gotPage && "Loading..."}</p>
+      {gotPage && <Banner acf={acf} />}
+      {gotPage && <Intro acf={acf} />}
     </div>
   );
 };

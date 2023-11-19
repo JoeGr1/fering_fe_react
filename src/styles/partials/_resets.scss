@@ -12,13 +12,15 @@
 html {
   font-size: 62.5%;
   scroll-padding-top: 25rem !important;
+  width: 100vw;
 }
 
 body {
   font-size: 1.6rem;
   margin: 0;
   position: relative;
-  // height: 100vw;
+  // overflow: hidden;
+  width: 100%;
 }
 
 h1,
@@ -31,6 +33,4 @@ p,
 a,
 span,
 li {
-  font-family: "Montserrat", sans-serif !important;
-  color: $dark-grey;
 }

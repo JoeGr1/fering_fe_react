@@ -18,6 +18,14 @@
     padding: 0 2rem;
     background-color: transparent;
   }
+}
+
+.nav {
+  @include flex(space-between, center, row);
+  width: 100%;
+  @include big-tablet {
+    // width: fit-content;
+  }
 
   &__logo {
     width: 12rem;
@@ -25,14 +33,6 @@
       height: fit-content;
       width: fit-content;
     }
-  }
-}
-
-.nav {
-  @include flex(right, center, row);
-
-  @include big-tablet {
-    width: fit-content;
   }
 
   &__list {

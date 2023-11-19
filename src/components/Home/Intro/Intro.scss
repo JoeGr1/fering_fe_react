@@ -1,0 +1,65 @@
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables";
+
+.intro {
+  @include flex(left, center, column);
+
+  &__container {
+    margin: 7rem 0;
+    width: 100%;
+    @include flex(space-between, center, column);
+    @include big-tablet {
+      @include flex(space-between, center, row);
+    }
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: inline-block;
+    &-container {
+      height: 100%;
+      width: 50%;
+      overflow: hidden;
+      @include big-tablet {
+        padding-right: 4rem;
+      }
+    }
+  }
+
+  &__content-box {
+    @include flex(center, center, column);
+    width: 80%;
+    margin: 3rem;
+    height: fit-content;
+
+    @include big-tablet {
+      width: 50%;
+      @include flex(left, flex-start, column);
+    }
+  }
+
+  &__title {
+    @include section-title;
+    text-align: center;
+    @include big-tablet {
+      text-align: left;
+    }
+  }
+
+  &__content {
+    color: $fnavy;
+    font-size: 2rem;
+    line-height: 2.6rem;
+    margin-bottom: 5rem;
+    text-align: center;
+    @include big-tablet {
+      text-align: left;
+    }
+  }
+
+  &__btn {
+    @include btn(white, $fnavy, 1px solid $fnavy);
+  }
+}
