@@ -6,6 +6,7 @@ import axios from "axios";
 
 import Banner from "../../components/Banner/Banner";
 import Intro from "../../components/Home/Intro/Intro";
+import SpecList from "../../components/Home/SpecList/SpecList";
 
 import { GET_PAGE } from "../../utils/apiCalls";
 
@@ -47,6 +48,7 @@ const Home = ({ id }) => {
       <p>{!gotPage && "Loading..."}</p>
       {gotPage && <Banner acf={acf} />}
       {gotPage && <Intro acf={acf} />}
+      {gotPage && <SpecList acf={acf} />}
     </div>
   );
 };

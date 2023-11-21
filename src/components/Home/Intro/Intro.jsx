@@ -9,8 +9,6 @@ import { GET_IMAGE_URL } from "../../../utils/apiCalls";
 const Intro = ({ acf }) => {
   const [image, setImage] = useState(null);
 
-  console.log(acf);
-
   const getImageUrl = async (imageId) => {
     try {
       const response = await GET_IMAGE_URL(imageId);
