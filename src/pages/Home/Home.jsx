@@ -7,6 +7,7 @@ import axios from "axios";
 import Banner from "../../components/Banner/Banner";
 import Intro from "../../components/Home/Intro/Intro";
 import SpecList from "../../components/Home/SpecList/SpecList";
+import Story from "../../components/Home/Story/Story";
 
 import { GET_PAGE } from "../../utils/apiCalls";
 
@@ -49,6 +50,7 @@ const Home = ({ id }) => {
       {gotPage && <Banner acf={acf} />}
       {gotPage && <Intro acf={acf} />}
       {gotPage && <SpecList acf={acf} />}
+      {gotPage && <Story acf={acf} />}
     </div>
   );
 };

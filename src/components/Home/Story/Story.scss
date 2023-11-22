@@ -1,0 +1,72 @@
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables";
+
+.story {
+  @include flex(center, center, column);
+  &__container {
+    margin: 7rem 0;
+
+    @include flex(center, center, column);
+  }
+
+  &__content-half-1,
+  &__content-half-2 {
+    width: 100%;
+    @include flex(space-between, center, row);
+    overflow: hidden; /* Add overflow hidden to the content half */
+  }
+
+  &__content-half-1 {
+    @include flex(space-between, center, column);
+    @include big-tablet {
+      @include flex(space-between, center, row);
+    }
+    margin-bottom: 40px;
+  }
+
+  &__content-half-2 {
+    @include flex(space-between, center, column);
+    @include big-tablet {
+      @include flex(space-between, center, row-reverse);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    &-container {
+      width: 50%;
+    }
+  }
+
+  &__title,
+  &__title-2 {
+    @include section-title;
+    font-size: 2.4rem;
+    text-align: center;
+    @include big-tablet {
+      font-size: 3.2rem;
+      text-align: left;
+    }
+  }
+
+  &__content,
+  &__content-2 {
+    margin-top: 30px;
+    & p {
+      color: $fnavy;
+      text-align: center;
+      @include big-tablet {
+        text-align: left;
+      }
+    }
+    &-box {
+      width: 80%;
+      padding: 40px;
+      @include big-tablet {
+        width: 50%;
+      }
+    }
+  }
+}
