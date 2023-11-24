@@ -5,34 +5,29 @@ import "./Story.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { GET_IMAGE_URL } from "../../../utils/apiCalls";
+import { parseWysiwyg } from "../../../utils/helperFunctions";
 
 const Story = ({ acf }) => {
   const [image, setImage] = useState(null);
   const [image2, setImage2] = useState(null);
 
-  const getImageUrl = async (imageId) => {
-    try {
-      const response = await GET_IMAGE_URL(imageId);
-      return response.data;
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   useEffect(() => {
-    if (acf) {
-      let img1 = getImageUrl(acf.story_image.id);
-      setImage(img1);
+    const fetchImages = async () => {
+      if (acf) {
+        try {
+          const img1Response = await GET_IMAGE_URL(acf.story_image.id);
+          setImage(img1Response.data);
 
-      let img2 = getImageUrl(acf.story_image_2.id);
-      setImage2(img2);
-    }
+          const img2Response = await GET_IMAGE_URL(acf.story_image_2.id);
+          setImage2(img2Response.data);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    };
+
+    fetchImages();
   }, [acf]);
-
-  //   useEffect(() => {
-  //     console.log(image);
-  //     console.log(image2);
-  //   }, [image, image2]);
 
   return (
     <section className="story">
@@ -49,7 +44,11 @@ const Story = ({ acf }) => {
           )}
           <div className="story__content-box">
             {acf && <div className="story__title">{acf.story_title}</div>}
-            {acf && <div className="story__content">{acf.story_content}</div>}
+            {acf && (
+              <div className="story__content">
+                {acf.story_content && parseWysiwyg(acf.story_content)}
+              </div>
+            )}
           </div>
         </div>
         <div className="story__content-half-2">
@@ -65,7 +64,9 @@ const Story = ({ acf }) => {
           <div className="story__content-box">
             {acf && <div className="story__title-2">{acf.story_title_2}</div>}
             {acf && (
-              <div className="story__content-2">{acf.story_content_2}</div>
+              <div className="story__content">
+                {acf.story_content && parseWysiwyg(acf.story_content_2)}
+              </div>
             )}
           </div>
         </div>

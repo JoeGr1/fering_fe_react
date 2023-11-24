@@ -6,16 +6,18 @@ import axios from "axios";
 
 import Banner from "../../components/Banner/Banner";
 
+import { GET_PAGE } from "../../utils/apiCalls";
+
 const Technology = ({ id }) => {
   const [page, setPage] = useState(null);
   const [gotPage, setGotPage] = useState(false);
+  const [acf, setAcf] = useState(null);
 
   const getPage = async () => {
     try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_ACF_WORDPRESS_API_URL}/pages/${id}`
-      );
+      const response = await GET_PAGE(id);
       setPage(response.data);
+      setGotPage("true");
     } catch (error) {
       console.error(error);
     }
@@ -24,7 +26,6 @@ const Technology = ({ id }) => {
   useEffect(() => {
     try {
       getPage();
-      setGotPage("true");
     } catch (err) {
       console.log(err);
     }
@@ -32,13 +33,20 @@ const Technology = ({ id }) => {
 
   useEffect(() => {
     try {
-      console.log(page);
+      if (page !== null) {
+        setAcf(page.acf);
+      }
     } catch (err) {
       console.log(err);
     }
   }, [page]);
 
-  return <div>Technology</div>;
+  return (
+    <div>
+      <p>{!gotPage && "Loading..."}</p>
+      {gotPage && <Banner acf={acf} />}
+    </div>
+  );
 };
 
 export default Technology;

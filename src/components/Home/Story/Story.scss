@@ -54,6 +54,9 @@
   &__content,
   &__content-2 {
     margin-top: 30px;
+    & *:not(:last-child) {
+      margin-bottom: 1rem;
+    }
     & p {
       color: $fnavy;
       text-align: center;
