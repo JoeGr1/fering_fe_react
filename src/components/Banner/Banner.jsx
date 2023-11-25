@@ -22,6 +22,9 @@ const Banner = ({ acf }) => {
       if (acf.is_slider) {
         getImageUrl(acf.image_list[0].image.id);
       } else {
+        console.log(acf);
+        console.log(acf.background_image);
+        console.log(acf.background_image.id);
         getImageUrl(acf.background_image.id);
       }
     }
