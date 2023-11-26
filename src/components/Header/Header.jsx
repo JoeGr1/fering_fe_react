@@ -39,7 +39,7 @@ const Header = () => {
 
   return (
     <div className="header">
-      <div className="header__container">
+      <div className="header__container container">
         <nav className="nav">
           {navAcf && (
             <Link to="/">
