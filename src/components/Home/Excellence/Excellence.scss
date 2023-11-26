@@ -1,0 +1,79 @@
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables";
+
+.excellence {
+  @include flex(left, center, column);
+  background-color: #373737;
+  &__container {
+    margin: 7rem 0;
+    width: 100%;
+    @include flex(space-between, center, column);
+  }
+
+  &__title {
+    @include section-title;
+    color: white;
+    letter-spacing: 0;
+    font-size: 3rem;
+  }
+
+  &__table {
+    @include flex(center, flex-end, row);
+
+    &-title {
+      padding: 1.5rem;
+      border: 2px solid white;
+      color: white;
+      margin-bottom: 1rem;
+      margin-right: 0.5rem;
+      font-weight: 600;
+    }
+
+    &-values-list {
+      @include flex(center, flex-start, row);
+    }
+
+    &-value-item {
+      display: none;
+      @include tablet {
+        display: block;
+      }
+    }
+
+    &-vehicle {
+      width: 15rem;
+      padding: 2rem;
+      border: 2px solid white;
+      color: white;
+      margin: 1rem 0.5rem;
+      background-color: $fnavy;
+      @include flex(center, center, row);
+      height: 8rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    &-value {
+      padding: 1.5rem;
+      border: 2px solid white;
+      color: white;
+      margin: 1rem 0.5rem;
+      background-color: $fnavy;
+      font-weight: 600;
+    }
+  }
+}
+
+.item-1 {
+  display: block;
+
+  .excellence__table {
+    &-vehicle,
+    &-value {
+      @include tablet {
+        background-color: white;
+        color: $fnavy;
+      }
+    }
+  }
+}
