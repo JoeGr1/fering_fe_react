@@ -9,6 +9,7 @@ import Intro from "../../components/Home/Intro/Intro";
 import SpecList from "../../components/Home/SpecList/SpecList";
 import Story from "../../components/Home/Story/Story";
 import HomeBreak from "../../components/Home/HomeBreak/HomeBreak";
+import VehiclePioneering from "../../components/Home/VehiclePioneering/VehiclePioneering";
 
 import { GET_PAGE } from "../../utils/apiCalls";
 
@@ -53,6 +54,7 @@ const Home = ({ id }) => {
       {gotPage && <SpecList acf={acf} />}
       {gotPage && <Story acf={acf} />}
       {gotPage && <HomeBreak acf={acf} />}
+      {gotPage && <VehiclePioneering acf={acf} />}
     </div>
   );
 };
