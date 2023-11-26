@@ -43,7 +43,7 @@ const Reserve = ({ id }) => {
 
   return (
     <div>
-      <p>{!gotPage && "Loading..."}</p>
+      {!gotPage && <p className="loading-tag">Loading...</p>}
       {gotPage && <Banner acf={acf} />}
     </div>
   );

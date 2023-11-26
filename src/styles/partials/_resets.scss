@@ -33,4 +33,11 @@ p,
 a,
 span,
 li {
+  color: #7d8793;
+}
+
+.loading-tag {
+  width: 100%;
+  @include flex(center, center, row);
+  margin: 30rem 0;
 }

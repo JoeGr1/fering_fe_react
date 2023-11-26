@@ -1,0 +1,64 @@
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables";
+
+.story-intro {
+  @include flex(left, center, column);
+
+  &__container {
+    margin: 7rem 0;
+    width: 100%;
+    @include flex(space-between, center, column);
+    @include big-tablet {
+      @include flex(space-between, center, row);
+    }
+  }
+
+  &__title {
+    @include section-title;
+    font-weight: 500;
+    font-size: 3rem;
+    width: fit-content;
+
+    @include tablet {
+      width: 80%;
+    }
+
+    @include big-tablet {
+      margin-left: 5rem;
+      width: 40%;
+    }
+
+    &-1,
+    &-3 {
+      color: black;
+    }
+
+    &-2 {
+      display: block;
+      @include tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+        margin: 2rem 0;
+      }
+      @include big-tablet {
+        display: block;
+        margin: 0;
+      }
+      & p {
+        color: $blue;
+      }
+
+      & p:last-child {
+        display: inline;
+      }
+    }
+  }
+
+  &__text {
+    width: 80%;
+    @include big-tablet {
+      width: 50%;
+    }
+  }
+}

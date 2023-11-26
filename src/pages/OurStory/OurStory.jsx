@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import Banner from "../../components/Banner/Banner";
+import StoryIntro from "../../components/OurStory/StoryIntro/StoryIntro";
 
 import { GET_PAGE } from "../../utils/apiCalls";
 
@@ -43,8 +44,9 @@ const OurStory = ({ id }) => {
 
   return (
     <div>
-      <p>{!gotPage && "Loading..."}</p>
+      {!gotPage && <p className="loading-tag">Loading...</p>}
       {gotPage && <Banner acf={acf} />}
+      {gotPage && <StoryIntro acf={acf} />}
     </div>
   );
 };
