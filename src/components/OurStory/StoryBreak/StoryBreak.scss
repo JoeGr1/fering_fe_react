@@ -1,0 +1,58 @@
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables";
+
+.story-break {
+  height: 30vh;
+  position: relative;
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    &-container {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(10, 34, 64, 0.4);
+    z-index: 2;
+  }
+
+  &__text {
+    @include flex(center, center, column);
+    @include tablet {
+      @include flex(center, center, row);
+    }
+    &-1,
+    &-3 {
+      @include section-title;
+      font-size: 5rem;
+      font-weight: 600;
+      color: $blue;
+      text-shadow: 1px -2px 4px rgba(240, 240, 240, 0.1);
+    }
+    &-2 {
+      @include section-title;
+      font-size: 5rem;
+      font-weight: 600;
+      color: white;
+      text-shadow: 1px -2px 2px rgba(240, 240, 240, 0.1);
+    }
+
+    &-box {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      @include flex(center, center, column);
+      z-index: 3;
+    }
+  }
+}
