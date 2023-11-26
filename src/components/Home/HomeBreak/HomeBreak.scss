@@ -1,0 +1,50 @@
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables";
+
+.home-break {
+  height: 40vh;
+  position: relative;
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    @include flex(center, center, column);
+    z-index: 2;
+  }
+
+  &__text {
+    color: white;
+    font-size: 2.6rem;
+    font-weight: 600;
+    width: 40%;
+    margin-right: 30%;
+    @include tablet {
+      font-size: 4rem;
+    }
+  }
+
+  &__author {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $blue;
+    width: 40%;
+    margin-right: 30%;
+  }
+}
