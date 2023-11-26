@@ -7,6 +7,7 @@ import axios from "axios";
 import Banner from "../../components/Banner/Banner";
 import StoryIntro from "../../components/OurStory/StoryIntro/StoryIntro";
 import StoryBreak from "../../components/OurStory/StoryBreak/StoryBreak";
+import Journey from "../../components/OurStory/Journey/Journey";
 
 import { GET_PAGE } from "../../utils/apiCalls";
 
@@ -49,6 +50,7 @@ const OurStory = ({ id }) => {
       {gotPage && <Banner acf={acf} />}
       {gotPage && <StoryIntro acf={acf} />}
       {gotPage && <StoryBreak acf={acf} />}
+      {gotPage && <Journey acf={acf} />}
     </div>
   );
 };
