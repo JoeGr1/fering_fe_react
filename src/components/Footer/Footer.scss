@@ -1,0 +1,29 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables";
+
+.footer {
+  @include flex(left, center, column);
+
+  &__container {
+    margin: 7rem 0;
+    width: 100%;
+    @include flex(center, center, column);
+  }
+
+  &__notes {
+    @include flex(center, center, column);
+  }
+
+  &__privacy {
+    margin: 2rem 0;
+
+    &-link {
+      margin: 0 1rem;
+      color: unset;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

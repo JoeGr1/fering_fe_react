@@ -6,11 +6,6 @@ import { useState, useEffect } from "react";
 import { GET_IMAGE_URL } from "../../../utils/apiCalls";
 
 const Excellence = ({ acf }) => {
-  useEffect(() => {
-    if (acf) {
-      console.log(acf);
-    }
-  }, [acf]);
   return (
     <section className="excellence">
       <div className="excellence__container container">

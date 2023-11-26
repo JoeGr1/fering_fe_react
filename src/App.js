@@ -3,6 +3,7 @@ import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import OurStory from "./pages/OurStory/OurStory";
 import PressRelease from "./pages/PressRelease/PressRelease";
@@ -20,6 +21,7 @@ function App() {
         <Route path="/technology/" element={<Technology id="55" />} />
         <Route path="/reserve/" element={<Reserve id="53" />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
