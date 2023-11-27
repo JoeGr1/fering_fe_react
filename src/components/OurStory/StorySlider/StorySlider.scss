@@ -1,0 +1,64 @@
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables";
+
+.story-slider {
+  width: 100%;
+  height: 55rem;
+  @include big-tablet {
+    height: 40rem;
+  }
+  overflow: hidden;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    &-container {
+      // width: 100%;
+      width: auto;
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+
+  & .slick-slider {
+    width: 100%;
+    height: 100%;
+
+    & .slick-list {
+      width: 100%;
+      height: 100%;
+    }
+
+    & .slick-track {
+      width: 100%;
+      height: 100%;
+    }
+
+    & .slick-slide {
+      margin-right: 2rem;
+      transition: margin-right 0.5s;
+      width: 100%;
+      height: 100%;
+
+      & > div {
+        width: 100%;
+        height: 100%;
+
+        & > div {
+          width: 100%;
+          height: 100%;
+
+          & > img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
