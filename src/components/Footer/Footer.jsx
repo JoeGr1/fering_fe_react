@@ -1,6 +1,8 @@
 import React from "react";
 import "./Footer.scss";
 
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -11,9 +13,9 @@ const Footer = () => {
           <p className="footer__copyright">© Fering {currentYear}</p>
           <p className="footer__privacy">
             |
-            <a href="/privacy/" className="footer__privacy-link">
+            <Link to="/privacy/" className="footer__privacy-link">
               Privacy Policy
-            </a>
+            </Link>
             |
           </p>
           <p className="footer__credit">

@@ -4,7 +4,10 @@ import "./Intro.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+import { Link } from "react-router-dom";
+
 import { GET_IMAGE_URL } from "../../../utils/apiCalls";
+import { parseWysiwyg } from "../../../utils/helperFunctions";
 
 const Intro = ({ acf }) => {
   const [image, setImage] = useState(null);
@@ -38,12 +41,16 @@ const Intro = ({ acf }) => {
         )}
         <div className="intro__content-box">
           {acf && <div className="intro__title">{acf.intro_title}</div>}
-          {acf && <div className="intro__content">{acf.intro_content}</div>}
+          {acf && (
+            <div className="intro__content">
+              {parseWysiwyg(acf.intro_content)}
+            </div>
+          )}
           {acf && acf.intro_button_link && (
             <div className="intro__btn-container">
-              <a href={acf.intro_button_link} className="intro__btn">
+              <Link to={acf.intro_button_link} className="intro__btn">
                 {acf.intro_button}
-              </a>
+              </Link>
             </div>
           )}
         </div>

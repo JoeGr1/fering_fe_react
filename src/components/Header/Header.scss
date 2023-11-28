@@ -64,6 +64,7 @@
     }
     &:hover {
       color: $blue;
+      transition: 0.6s;
     }
   }
 
@@ -116,8 +117,10 @@
 .navbar-burger {
   display: flex;
   cursor: pointer;
-  & i {
-    color: white;
+  color: white;
+  &:hover {
+    color: $blue;
+    transition: 0.6s;
   }
   @include big-tablet {
     display: none;

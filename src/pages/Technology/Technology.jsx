@@ -7,6 +7,7 @@ import axios from "axios";
 import Banner from "../../components/Banner/Banner";
 
 import { GET_PAGE } from "../../utils/apiCalls";
+import ModularConstruction from "../../components/Technology/ModularConstruction/ModularConstruction";
 
 const Technology = ({ id }) => {
   const [page, setPage] = useState(null);
@@ -45,6 +46,7 @@ const Technology = ({ id }) => {
     <div>
       {!gotPage && <p className="loading-tag">Loading...</p>}
       {gotPage && <Banner acf={acf} />}
+      {gotPage && <ModularConstruction acf={acf} />}
     </div>
   );
 };

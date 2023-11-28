@@ -5,14 +5,12 @@ import { Link, NavLink } from "react-router-dom";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
-
 import { GET_OPTIONS_ACF } from "../../utils/apiCalls";
 
 import logo from "../../assets/feringword.png";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import { faBars, faInstagram } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const [nav, setNav] = useState(null);
@@ -54,6 +52,11 @@ const Header = () => {
                 </NavLink>
               ))}
           </div>
+          {navAcf && (
+            <Link to={navAcf.header_button.link} className="nav__btn">
+              {navAcf.header_button.text}
+            </Link>
+          )}
           <FontAwesomeIcon icon={faBars} className="navbar-burger" />
         </nav>
       </div>

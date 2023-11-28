@@ -5,6 +5,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { GET_IMAGE_URL } from "../../utils/apiCalls";
 
+import BannerSlider from "./BannerSlider";
+import BannerStatic from "./BannerStatic";
+
 const Banner = ({ acf }) => {
   const [image, setImage] = useState(null);
   const [images, setImages] = useState([]);
@@ -42,33 +45,9 @@ const Banner = ({ acf }) => {
     }
   }, [acf]);
 
-  return (
-    acf &&
-    image && (
-      <section className="banner">
-        <img
-          src={image.source_url}
-          alt="Image"
-          className="banner__background"
-        />
-        <div className="banner__container">
-          <div className="banner__content-box">
-            {acf.banner_heading && (
-              <p className="banner__heading"> {acf.banner_heading} </p>
-            )}
-            {acf.banner_title && (
-              <p className="banner__title">{acf.banner_title} </p>
-            )}
-            {acf.banner_button && acf.banner_button_link && (
-              <a href={acf.banner_button_link} className="banner__btn">
-                {acf.banner_button}{" "}
-              </a>
-            )}
-          </div>
-        </div>
-      </section>
-    )
-  );
+  return acf && acf.is_slider
+    ? images && <BannerSlider images={images} acf={acf} />
+    : image && <BannerStatic image={image} acf={acf} />;
 };
 
 export default Banner;
