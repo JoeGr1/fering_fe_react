@@ -8,6 +8,7 @@ import Banner from "../../components/Banner/Banner";
 
 import { GET_PAGE } from "../../utils/apiCalls";
 import ModularConstruction from "../../components/Technology/ModularConstruction/ModularConstruction";
+import TechBreak from "../../components/Technology/TechBreak/TechBreak";
 
 const Technology = ({ id }) => {
   const [page, setPage] = useState(null);
@@ -47,6 +48,7 @@ const Technology = ({ id }) => {
       {!gotPage && <p className="loading-tag">Loading...</p>}
       {gotPage && <Banner acf={acf} />}
       {gotPage && <ModularConstruction acf={acf} />}
+      {gotPage && <TechBreak acf={acf} />}
     </div>
   );
 };

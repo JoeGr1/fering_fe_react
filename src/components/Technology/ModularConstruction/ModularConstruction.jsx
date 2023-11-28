@@ -22,7 +22,6 @@ const ModularConstruction = ({ acf }) => {
   useEffect(() => {
     if (acf) {
       getImageUrl(acf.modular_image.id);
-      console.log(acf);
     }
   }, [acf]);
 
