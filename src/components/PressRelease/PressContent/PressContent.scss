@@ -1,0 +1,20 @@
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables";
+
+.press-content {
+  @include flex(center, center, column);
+
+  &__container {
+    margin: 5rem 0;
+  }
+
+  &__text {
+    & > *:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    & * {
+      color: $text_charcoal;
+    }
+  }
+}

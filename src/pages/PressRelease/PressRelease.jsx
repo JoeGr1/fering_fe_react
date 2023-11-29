@@ -8,6 +8,7 @@ import Banner from "../../components/Banner/Banner";
 
 import { GET_PAGE } from "../../utils/apiCalls";
 import PressIntro from "../../components/PressRelease/PressIntro/PressIntro";
+import PressContent from "../../components/PressRelease/PressContent/PressContent";
 
 const PressRelease = ({ id }) => {
   const [page, setPage] = useState(null);
@@ -47,6 +48,7 @@ const PressRelease = ({ id }) => {
       {!gotPage && <p className="loading-tag">Loading...</p>}
       {gotPage && <Banner acf={acf} />}
       {gotPage && <PressIntro acf={acf} />}
+      {gotPage && <PressContent acf={acf} />}
     </div>
   );
 };

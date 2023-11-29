@@ -6,11 +6,6 @@ import { useState, useEffect } from "react";
 import { parseWysiwyg } from "../../../utils/helperFunctions";
 
 const PressIntro = ({ acf }) => {
-  useEffect(() => {
-    if (acf) {
-      console.log(acf);
-    }
-  }, [acf]);
   return (
     <section className="press-intro">
       <div className="press-intro__container container">
