@@ -1,0 +1,42 @@
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables";
+
+.press-intro {
+  @include flex(center, center, column);
+
+  background-color: $fnavy;
+
+  &__container {
+    margin: 5rem 0;
+  }
+
+  &__title {
+    margin-bottom: 4rem;
+    & p {
+      @include section-title;
+      margin: 0 !important;
+      font-weight: 700;
+    }
+
+    &-1,
+    &-2,
+    &-3-dash {
+      color: white !important;
+    }
+
+    &-3-text {
+      color: $blue !important;
+    }
+  }
+
+  &__text {
+    & ul {
+      margin-left: 5rem;
+    }
+
+    & * {
+      color: white;
+      font-weight: 700;
+    }
+  }
+}
