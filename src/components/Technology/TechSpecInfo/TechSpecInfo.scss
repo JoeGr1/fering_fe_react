@@ -1,0 +1,66 @@
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables";
+
+.tech-spec {
+  @include flex(left, center, column);
+
+  &__container {
+    margin: 7rem 0;
+    width: 100%;
+    @include flex(space-between, center, column);
+  }
+
+  &__item {
+    @include flex(center, center, column);
+    @include big-tablet {
+      @include flex(space-between, center, row);
+    }
+    margin-bottom: 4rem;
+
+    &-image {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      display: inline-block;
+      &-container {
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+        margin: 0 5rem;
+        @include big-tablet {
+          width: 40%;
+          height: 100%;
+        }
+      }
+    }
+
+    &-content-box {
+      width: 100%;
+      height: 50%;
+      @include big-tablet {
+        width: 60%;
+        height: 100%;
+      }
+    }
+
+    &-title {
+      @include section-title;
+      font-size: 2.2rem;
+    }
+
+    &-text {
+      & p:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__list {
+    & > div:nth-child(2n) {
+      @include flex(center, center, column);
+      @include big-tablet {
+        @include flex(space-between, center, row-reverse);
+      }
+    }
+  }
+}
