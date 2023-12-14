@@ -13,6 +13,11 @@ export const GET_PAGE = (id) => axios.get(`${wordpressAPI}/pages/${id}`);
 export const GET_IMAGE_URL = (imageId) =>
   axios.get(`${wordpressAPI}/media/${imageId}`);
 
+//files
+
+export const GET_FILE_URL = (fileId) =>
+  axios.get(`${wordpressAPI}/media/${fileId}`);
+
 //options page
 
 export const GET_OPTIONS_ACF = () =>

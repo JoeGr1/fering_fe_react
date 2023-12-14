@@ -6,11 +6,6 @@ import { useState, useEffect } from "react";
 import { parseWysiwyg } from "../../../utils/helperFunctions";
 
 const PressContent = ({ acf }) => {
-  useEffect(() => {
-    if (acf) {
-      console.log(acf);
-    }
-  }, [acf]);
   return (
     acf && (
       <section className="press-content">

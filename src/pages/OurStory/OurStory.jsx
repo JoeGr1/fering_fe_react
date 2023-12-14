@@ -10,6 +10,7 @@ import StoryBreak from "../../components/OurStory/StoryBreak/StoryBreak";
 import Journey from "../../components/OurStory/Journey/Journey";
 import StorySlider from "../../components/OurStory/StorySlider/StorySlider";
 import Expert from "../../components/OurStory/Expert/Expert";
+import ContactForm from "../../components/ContactForm/ContactForm";
 
 import { GET_PAGE } from "../../utils/apiCalls";
 
@@ -55,6 +56,7 @@ const OurStory = ({ id }) => {
       {gotPage && <Journey acf={acf} />}
       {gotPage && <StorySlider acf={acf} />}
       {gotPage && <Expert acf={acf} />}
+      {gotPage && <ContactForm />}
     </div>
   );
 };

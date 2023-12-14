@@ -9,6 +9,8 @@ import Banner from "../../components/Banner/Banner";
 import { GET_PAGE } from "../../utils/apiCalls";
 import PressIntro from "../../components/PressRelease/PressIntro/PressIntro";
 import PressContent from "../../components/PressRelease/PressContent/PressContent";
+import PressDownloads from "../../components/PressRelease/PressDownloads/PressDownloads";
+import ContactForm from "../../components/ContactForm/ContactForm";
 
 const PressRelease = ({ id }) => {
   const [page, setPage] = useState(null);
@@ -49,6 +51,8 @@ const PressRelease = ({ id }) => {
       {gotPage && <Banner acf={acf} />}
       {gotPage && <PressIntro acf={acf} />}
       {gotPage && <PressContent acf={acf} />}
+      {gotPage && <PressDownloads acf={acf} />}
+      {gotPage && <ContactForm />}
     </div>
   );
 };

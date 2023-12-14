@@ -14,6 +14,7 @@ import SingleBanner from "../../components/Home/SingleBanner/SingleBanner";
 import Excellence from "../../components/Home/Excellence/Excellence";
 
 import { GET_PAGE } from "../../utils/apiCalls";
+import ContactForm from "../../components/ContactForm/ContactForm";
 
 const Home = ({ id }) => {
   const [page, setPage] = useState(null);
@@ -59,6 +60,7 @@ const Home = ({ id }) => {
       {gotPage && <VehiclePioneering acf={acf} />}
       {gotPage && <SingleBanner acf={acf} />}
       {gotPage && <Excellence acf={acf} />}
+      {gotPage && <ContactForm />}
     </div>
   );
 };

@@ -17,6 +17,9 @@
     max-width: 160rem;
     padding: 0 2rem;
     background-color: transparent;
+    @include desktop {
+      padding: 0;
+    }
   }
 }
 

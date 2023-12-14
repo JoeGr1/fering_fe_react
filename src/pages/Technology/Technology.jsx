@@ -10,6 +10,7 @@ import { GET_PAGE } from "../../utils/apiCalls";
 import ModularConstruction from "../../components/Technology/ModularConstruction/ModularConstruction";
 import TechBreak from "../../components/Technology/TechBreak/TechBreak";
 import TechSpecInfo from "../../components/Technology/TechSpecInfo/TechSpecInfo";
+import ContactForm from "../../components/ContactForm/ContactForm";
 
 const Technology = ({ id }) => {
   const [page, setPage] = useState(null);
@@ -51,6 +52,7 @@ const Technology = ({ id }) => {
       {gotPage && <ModularConstruction acf={acf} />}
       {gotPage && <TechBreak acf={acf} />}
       {gotPage && <TechSpecInfo acf={acf} />}
+      {gotPage && <ContactForm />}
     </div>
   );
 };
