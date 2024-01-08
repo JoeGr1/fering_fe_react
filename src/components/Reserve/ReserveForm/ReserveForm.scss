@@ -1,0 +1,81 @@
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables";
+
+.reserve-form {
+  @include flex(left, center, column);
+  background-color: black;
+  &__container {
+    margin: 7rem 0;
+    width: 100%;
+    @include flex(space-between, center, column);
+  }
+
+  &__form {
+    padding: 4rem;
+    border-radius: 5px;
+    width: 100%;
+    @include big-tablet {
+      width: 80%;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 1rem 0;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    @include big-tablet {
+      margin-right: 0;
+    }
+
+    &-box {
+      &-split {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+
+        @include big-tablet {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+
+  &__radio {
+    margin-right: 2rem;
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+      @include big-tablet {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    &-label {
+      margin-right: 1rem;
+      color: white;
+    }
+  }
+
+  &__checkbox {
+    margin-right: 2rem;
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+      @include big-tablet {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    &-label {
+      margin-right: 1rem;
+      color: white;
+    }
+  }
+
+  &__label {
+    color: white;
+  }
+}

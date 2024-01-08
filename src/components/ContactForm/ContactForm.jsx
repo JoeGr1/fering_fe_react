@@ -4,7 +4,9 @@ import "./ContactForm.scss";
 
 import { GET_OPTIONS_ACF } from "../../utils/apiCalls";
 import Input from "../FormParts/Input/Input";
+import InputColumns from "../FormParts/InputColumns/InputColumns";
 import TextArea from "../FormParts/TextArea/TextArea";
+import Text from "../FormParts/Text/Text";
 import Dropdown from "../FormParts/Dropdown/Dropdown";
 import Radio from "../FormParts/Radio/Radio";
 import Checkbox from "../FormParts/Checkbox/Checkbox";
@@ -16,8 +18,6 @@ const ContactForm = () => {
   const getForm = async () => {
     try {
       const response = await GET_OPTIONS_ACF();
-
-      console.log(response.data.acf);
       setFormAcf(response.data.acf);
     } catch (error) {
       console.error(error);
@@ -34,21 +34,26 @@ const ContactForm = () => {
 
   const renderFormFields = () => {
     if (formAcf && formAcf.form_content) {
-      console.log(formAcf.form_content);
       return formAcf.form_content.map((field, index) => {
         switch (field.acf_fc_layout) {
           case "text_input":
-            return <Input key={index} field={field} />;
+            return <Input key={index} field={field} classLoc={"contact"} />;
+          case "text_input_column":
+            return (
+              <InputColumns key={index} field={field} classLoc={"contact"} />
+            );
           case "textarea":
-            return <TextArea key={index} field={field} />;
+            return <TextArea key={index} field={field} classLoc={"contact"} />;
+          case "text":
+            return <Text key={index} field={field} classLoc={"contect"} />;
           case "radio":
-            return <Radio key={index} field={field} />;
+            return <Radio key={index} field={field} classLoc={"contact"} />;
           case "checkbox":
-            return <Checkbox key={index} field={field} />;
+            return <Checkbox key={index} field={field} classLoc={"contact"} />;
           case "dropdown":
-            return <Dropdown key={index} field={field} />;
+            return <Dropdown key={index} field={field} classLoc={"contact"} />;
           case "submit":
-            return <Submit key={index} field={field} />;
+            return <Submit key={index} field={field} classLoc={"contact"} />;
           default:
             return null;
         }

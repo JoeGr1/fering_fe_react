@@ -1,15 +1,14 @@
 import React from "react";
 
-import "./Input.scss";
-
-const Input = ({ field }) => {
+const Input = ({ field, classLoc }) => {
+  console.log(field);
   return (
-    <div className="contact-form__input-box">
-      <label className="contact-form__label">{field.label}</label>
+    <div className={`${classLoc}-form__input-box`}>
+      <label className={`${classLoc}-form__label`}>{field.label}</label>
       <input
         type="text"
-        className="contact-form__text"
-        placeholder={field.placeholder}
+        className={`${classLoc}-form__input`}
+        placeholder={field.placeholder_text}
       />
     </div>
   );

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import Banner from "../../components/Banner/Banner";
+import ReserveForm from "../../components/Reserve/ReserveForm/ReserveForm";
 
 import { GET_PAGE } from "../../utils/apiCalls";
 
@@ -34,6 +35,7 @@ const Reserve = ({ id }) => {
   useEffect(() => {
     try {
       if (page !== null) {
+        console.log(page.acf);
         setAcf(page.acf);
       }
     } catch (err) {
@@ -45,6 +47,7 @@ const Reserve = ({ id }) => {
     <div>
       {!gotPage && <p className="loading-tag">Loading...</p>}
       {gotPage && <Banner acf={acf} />}
+      {gotPage && <ReserveForm acf={acf} />}
     </div>
   );
 };

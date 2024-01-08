@@ -1,16 +1,15 @@
 import React from "react";
 
-import "./Radio.scss";
-
-const Radio = ({ field }) => {
-  console.log(field);
+const Radio = ({ field, classLoc }) => {
   return (
-    <div className="contact-form__input-box">
-      <label className="contact-form__label">{field.label}</label>
-      <div className="contact-form__radio-list">
+    <div className={`${classLoc}-form__input-box`}>
+      <label className={`${classLoc}-form__label`}>{field.label}</label>
+      <div className={`${classLoc}-form__radio-list`}>
         {field.options.map((option, index) => (
-          <div className="contact-form__radio" key={index}>
-            <label className="contact-form__radio-label">{option.label}</label>
+          <div className={`${classLoc}-form__radio`} key={index}>
+            <label className={`${classLoc}-form__radio-label`}>
+              {option.label}
+            </label>
             <input type="radio" id={option.value} value={option.value} />
           </div>
         ))}

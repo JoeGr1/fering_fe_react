@@ -1,13 +1,12 @@
 import React from "react";
 
-import "./TextArea.scss";
-
-const TextArea = ({ field }) => {
+const TextArea = ({ field, classLoc }) => {
   return (
-    <div className="contact-form__input-box">
-      <label className="contact-form__label">{field.label}</label>
+    <div className={`${classLoc}-form__input-box`}>
+      <label className={`${classLoc}-form__label`}>{field.label}</label>
       <textarea
-        className="contact-form__text"
+        rows="6"
+        className={`${classLoc}-form__textarea`}
         placeholder={field.placeholder}
       />
     </div>

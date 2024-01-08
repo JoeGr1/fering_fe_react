@@ -27,11 +27,11 @@
   @include flex(space-between, center, row);
   width: 100%;
   @include big-tablet {
-    // width: fit-content;
   }
 
   &__logo {
     width: 12rem;
+    filter: invert(1);
     &-link {
       height: fit-content;
       width: fit-content;
@@ -95,14 +95,26 @@
   }
 }
 
-.header-scrolled,
 .header-active {
+  background-color: white;
+  @include big-tablet {
+    background-color: transparent;
+  }
+}
+
+.header-scrolled {
   background-color: white;
 }
 
-.header__logo-scrolled,
-.header__logo-active {
-  filter: invert(1);
+.nav__logo-active {
+  filter: invert(0);
+  @include big-tablet {
+    filter: invert(1);
+  }
+}
+
+.nav__logo-scrolled {
+  filter: invert(0);
 }
 
 .nav__btn-active {
@@ -130,9 +142,13 @@
   }
 }
 
-.navbar-burger-scrolled,
 .navbar-burger-active {
-  & i {
-    color: $fnavy;
+  color: $fnavy;
+}
+
+.navbar-burger-scrolled {
+  color: $fnavy;
+  @include big-tablet {
+    color: white;
   }
 }

@@ -1,17 +1,14 @@
 import React from "react";
 
-import "./Dropdown.scss";
-
-const Dropdown = ({ field }) => {
-  console.log(field);
+const Dropdown = ({ field, classLoc }) => {
   return (
-    <div className="contact-form__input-box">
-      <label className="contact-form__label">{field.label}</label>
-      <select className="contact-form__select">
+    <div className={`${classLoc}-form__input-box`}>
+      <label className={`${classLoc}-form__label`}>{field.label}</label>
+      <select className={`${classLoc}-form__select`}>
         {field.options.map((option, index) => (
           <option
             value={option.value}
-            className="contact-form__dropdown"
+            className={`${classLoc}-form__dropdown`}
             key={index}
           >
             {option.label}

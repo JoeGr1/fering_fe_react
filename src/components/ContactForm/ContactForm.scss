@@ -24,10 +24,99 @@
   }
 
   &__form {
-    width: 100%;
     padding: 4rem;
     border-radius: 5px;
     background-color: white;
     width: 100%;
+    max-width: 70rem;
+  }
+
+  &__input-box {
+    margin-bottom: 3rem;
+    width: 100%;
+    @include flex(left, flex-start, column);
+
+    &-split {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+
+      @include big-tablet {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  &__label {
+    width: 100%;
+    color: black;
+    margin-bottom: 1.5rem;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    border: 1px solid $grey;
+    border-radius: 0.6rem;
+    outline: none;
+  }
+
+  &__textarea {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    border: 1px solid $grey;
+    border-radius: 0.6rem;
+    outline: none;
+  }
+
+  &__select {
+    padding: 1rem 2rem;
+    border: 1px solid $grey;
+    border-radius: 0.6rem;
+    outline: none;
+  }
+
+  &__checkbox {
+    margin-right: 2rem;
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+      @include big-tablet {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    &-label {
+      margin-right: 1rem;
+    }
+  }
+
+  &__radio {
+    margin-right: 2rem;
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+      @include big-tablet {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    &-label {
+      margin-right: 1rem;
+    }
+  }
+
+  &__submit {
+    width: fit-content;
+    color: black;
+    padding: 1.5rem 3rem;
+    @include btn(white, $fnavy, 1px solid $fnavy);
+    border-radius: 3px;
+    margin-top: 3rem;
+
+    &-box {
+      width: 100%;
+      @include flex(center, center, row);
+    }
   }
 }

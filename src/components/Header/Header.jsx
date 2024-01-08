@@ -16,6 +16,9 @@ const Header = () => {
   const [nav, setNav] = useState(null);
   const [navAcf, setNavAcf] = useState(null);
 
+  const [navScrolled, setNavScrolled] = useState(false);
+  const [burgerClicked, setBurgerClicked] = useState(false);
+
   const getNav = async () => {
     try {
       const response = await GET_OPTIONS_ACF();
@@ -35,29 +38,77 @@ const Header = () => {
     }
   }, []);
 
+  function handleBurgerClick() {
+    if (!burgerClicked) {
+      setBurgerClicked(true);
+    } else {
+      setBurgerClicked(false);
+    }
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 150) {
+        setNavScrolled(true);
+      } else {
+        setNavScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="header">
+    <div
+      className={`header ${burgerClicked ? "header-active" : ""} ${
+        navScrolled ? "header-scrolled" : ""
+      }`}
+    >
       <div className="header__container container">
         <nav className="nav">
           {navAcf && (
             <Link to="/">
-              <img src={logo} alt="Logo" className="nav__logo" />
+              <img
+                src={logo}
+                alt="Logo"
+                className={`nav__logo ${
+                  burgerClicked ? "nav__logo-active" : ""
+                } ${navScrolled ? "nav__logo-scrolled" : ""}`}
+              />
             </Link>
           )}
-          <div className="nav__list">
+          <div
+            className={`nav__list ${burgerClicked ? "nav__list-active" : ""}`}
+          >
             {nav &&
               nav.map((link) => (
-                <NavLink to={link.link} className="nav__link" key={link.text}>
+                <NavLink
+                  to={link.link}
+                  className={`nav__link ${
+                    navScrolled ? "nav__link-scrolled" : ""
+                  }`}
+                  key={link.text}
+                >
                   {link.text}
                 </NavLink>
               ))}
           </div>
           {navAcf && (
-            <Link to={navAcf.header_button.link} className="nav__btn">
+            <Link
+              to={navAcf.header_button.link}
+              className={`nav__btn ${burgerClicked ? "nav__btn-active" : ""}`}
+            >
               {navAcf.header_button.text}
             </Link>
           )}
-          <FontAwesomeIcon icon={faBars} className="navbar-burger" />
+          <FontAwesomeIcon
+            icon={faBars}
+            className={`navbar-burger ${
+              burgerClicked ? "navbar-burger-active" : ""
+            } ${navScrolled ? "navbar-burger-scrolled" : ""}`}
+            onClick={() => {
+              handleBurgerClick();
+            }}
+          />
         </nav>
       </div>
     </div>

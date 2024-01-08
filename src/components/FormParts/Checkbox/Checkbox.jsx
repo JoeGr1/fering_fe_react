@@ -1,16 +1,13 @@
 import React from "react";
 
-import "./Checkbox.scss";
-
-const Checkbox = ({ field }) => {
-  console.log(field);
+const Checkbox = ({ field, classLoc }) => {
   return (
-    <div className="contact-form__input-box">
-      <label className="contact-form__label">{field.label}</label>
-      <div className="contact-form__checkbox-list">
+    <div className={`${classLoc}-form__input-box`}>
+      <label className={`${classLoc}-form__label`}>{field.label}</label>
+      <div className={`${classLoc}-form__checkbox-list`}>
         {field.options.map((option, index) => (
-          <div className="contact-form__checkbox" key={index}>
-            <label className="contact-form__checkbox-label">
+          <div className={`${classLoc}-form__checkbox`} key={index}>
+            <label className={`${classLoc}-form__checkbox-label`}>
               {option.label}
             </label>
             <input type="checkbox" id={option.value} value={option.value} />

@@ -1,10 +1,13 @@
 import React from "react";
 
-import "./Submit.scss";
-
-const Submit = ({ field }) => {
-  console.log(field);
-  return <div>Submit</div>;
+const Submit = ({ field, classLoc }) => {
+  return (
+    <div className={`${classLoc}-form__submit-box`}>
+      <button className={`${classLoc}-form__submit`} type="submit">
+        {field.text}
+      </button>
+    </div>
+  );
 };
 
 export default Submit;
