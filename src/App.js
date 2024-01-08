@@ -19,7 +19,7 @@ function App() {
         <Route path="/our-story/" element={<OurStory id="57" />} />
         <Route path="/press-release/" element={<PressRelease id="59" />} />
         <Route path="/technology/" element={<Technology id="55" />} />
-        <Route path="/reserve/" element={<Reserve id="53" />} />
+        <Route path="/contact/" element={<Reserve id="53" />} />
       </Routes>
       <Footer />
     </BrowserRouter>

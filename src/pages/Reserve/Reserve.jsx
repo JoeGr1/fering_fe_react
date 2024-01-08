@@ -6,6 +6,7 @@ import axios from "axios";
 
 import Banner from "../../components/Banner/Banner";
 import ReserveForm from "../../components/Reserve/ReserveForm/ReserveForm";
+import ContactForm from "../../components/ContactForm/ContactForm";
 
 import { GET_PAGE } from "../../utils/apiCalls";
 
@@ -47,7 +48,8 @@ const Reserve = ({ id }) => {
     <div>
       {!gotPage && <p className="loading-tag">Loading...</p>}
       {gotPage && <Banner acf={acf} />}
-      {gotPage && <ReserveForm acf={acf} />}
+      {gotPage && <ContactForm acf={acf} />}
+      {/* {gotPage && <ReserveForm acf={acf} />} */}
     </div>
   );
 };
