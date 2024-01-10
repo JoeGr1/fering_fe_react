@@ -1,7 +1,6 @@
 import React from "react";
 
 const Input = ({ field, classLoc }) => {
-  console.log(field);
   return (
     <div className={`${classLoc}-form__input-box`}>
       <label className={`${classLoc}-form__label`}>{field.label}</label>

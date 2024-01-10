@@ -64,6 +64,7 @@ const ContactForm = () => {
 
   return (
     <section className="contact-form">
+      <div className="contact-form__bg-over"></div>
       <div className="contact-form__container container">
         {formAcf && (
           <p className="contact-form__title">{formAcf.contact_title}</p>
