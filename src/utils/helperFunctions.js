@@ -12,11 +12,11 @@ export const handlePasswordProtected = (setProp, page) => {
   }
 };
 
-export const handlePasswordProtectedForm = (e, setProp, acf) => {
+export const handlePasswordProtectedForm = (e, setState, acf) => {
   e.preventDefault();
 
   if (e.target[0].value == acf.password) {
     localStorage.setItem("passwordEntered", "true");
-    setProp(false);
+    setState(false);
   }
 };

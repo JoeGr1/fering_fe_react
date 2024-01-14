@@ -36,7 +36,6 @@ const Reserve = ({ id }) => {
   useEffect(() => {
     try {
       if (page !== null) {
-        console.log(page.acf);
         setAcf(page.acf);
       }
     } catch (err) {

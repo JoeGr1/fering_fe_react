@@ -6,7 +6,7 @@
   top: 0;
   z-index: 20;
   height: 10rem;
-  width: 100%;
+  width: 100vw;
   @include flex(center, center, row);
   background-color: transparent;
 
@@ -90,7 +90,7 @@
       top: 0;
       left: 0;
       transform: translateX(0);
-      margin-left: 2rem;
+      margin: 0 2rem;
     }
   }
 }

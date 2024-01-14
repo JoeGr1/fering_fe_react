@@ -48,10 +48,10 @@ const Technology = ({ id }) => {
   return (
     <div>
       {!gotPage && <p className="loading-tag">Loading...</p>}
-      {gotPage && <Banner acf={acf} />}
+      {/* {gotPage && <Banner acf={acf} />} */}
       {gotPage && <ModularConstruction acf={acf} />}
       {gotPage && <TechBreak acf={acf} />}
-      {gotPage && <TechSpecInfo acf={acf} />}
+      {/* {gotPage && <TechSpecInfo acf={acf} />} */}
       {gotPage && <ContactForm />}
     </div>
   );

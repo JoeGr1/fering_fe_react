@@ -2,64 +2,70 @@
 @use "../../../styles/partials/variables";
 
 .tech-spec {
-  @include flex(left, center, column);
+  @include flex(center, center, column);
+  height: fit-content;
+  width: 100%;
+
+  background-color: $dark-lichen;
+
+  @include big-tablet {
+    height: 100%;
+    width: 30%;
+  }
 
   &__container {
-    margin: 7rem 0;
     width: 100%;
-    @include flex(space-between, center, column);
+    height: 100%;
+    @include flex(center, center, column);
+    padding: 3rem;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    @include big-tablet {
+      @include flex(center, flex-start, column);
+    }
   }
 
   &__item {
     @include flex(center, center, column);
+    margin-bottom: 2rem;
+
     @include big-tablet {
-      @include flex(space-between, center, row);
-    }
-    margin-bottom: 4rem;
-
-    &-image {
-      height: 100%;
-      width: 100%;
-      object-fit: contain;
-      display: inline-block;
-      &-container {
-        width: 100%;
-        height: 50%;
-        overflow: hidden;
-        margin: 0 5rem;
-        @include big-tablet {
-          width: 40%;
-          height: 100%;
-        }
-      }
+      @include flex(left, flex-start, column);
     }
 
-    &-content-box {
-      width: 100%;
-      height: 50%;
-      @include big-tablet {
-        width: 60%;
-        height: 100%;
-      }
-    }
-
-    &-title {
-      @include section-title;
-      font-size: 2.2rem;
-    }
-
-    &-text {
-      & p:not(:last-child) {
-        margin-bottom: 1rem;
-      }
+    &-line {
+      border-bottom: 2px solid black;
+      width: 6rem;
     }
   }
 
-  &__list {
-    & > div:nth-child(2n) {
-      @include flex(center, center, column);
+  &__text {
+    color: black;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  &__measurement {
+    color: black;
+    margin-bottom: 2rem;
+    @include flex(center, center, row);
+
+    width: fit-content;
+
+    &-bold {
+      font-size: 3rem;
+      color: black;
+      text-align: center;
+      width: fit-content;
+      margin-right: 0.5rem;
+      font-weight: 600;
+
       @include big-tablet {
-        @include flex(space-between, center, row-reverse);
+        text-align: left;
       }
     }
   }

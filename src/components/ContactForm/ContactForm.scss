@@ -4,6 +4,7 @@
 .contact-form {
   @include flex(left, center, column);
   position: relative;
+  height: fit-content;
 
   &__bg-over {
     background-color: $fnavy;
@@ -22,6 +23,7 @@
     margin: 7rem 0;
     width: 100%;
     @include flex(space-between, center, column);
+    height: fit-content;
   }
 
   &__title {
@@ -38,11 +40,18 @@
   }
 
   &__form {
-    padding: 4rem;
-    border-radius: 5px;
-    background-color: white;
+    height: fit-content;
     width: 100%;
-    max-width: 70rem;
+
+    @include flex(center, center, column);
+
+    & iframe {
+      width: 100%;
+
+      @include tablet {
+        width: 65rem;
+      }
+    }
   }
 
   &__input-box {
