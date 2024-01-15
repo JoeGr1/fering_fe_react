@@ -50,10 +50,10 @@ const OurStory = ({ id }) => {
   return (
     <div>
       {!gotPage && <p className="loading-tag">Loading...</p>}
-      {gotPage && <Banner acf={acf} />}
+      {/* {gotPage && <Banner acf={acf} />} */}
       {gotPage && <StoryIntro acf={acf} />}
+      {/* {gotPage && <Journey acf={acf} />} */}
       {gotPage && <StoryBreak acf={acf} />}
-      {gotPage && <Journey acf={acf} />}
       {gotPage && <StorySlider acf={acf} />}
       {gotPage && <Expert acf={acf} />}
       {gotPage && <ContactForm />}
