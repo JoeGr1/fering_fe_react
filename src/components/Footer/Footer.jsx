@@ -13,7 +13,7 @@ const Footer = () => {
           <p className="footer__copyright">© Fering {currentYear}</p>
           <p className="footer__privacy">
             |
-            <Link to="/privacy/" className="footer__privacy-link">
+            <Link to="/privacy-policy/" className="footer__privacy-link">
               Privacy Policy
             </Link>
             |

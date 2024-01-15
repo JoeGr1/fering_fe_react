@@ -54,7 +54,7 @@ const PressRelease = ({ id }) => {
     <div>
       {!gotPage && <p className="loading-tag">Loading...</p>}
       {gotPage &&
-        !localStorage.getItem("passwordEntered") &&
+        !sessionStorage.getItem("passwordEntered") &&
         isPasswordProtected && (
           <PasswordProtected
             acf={acf}
@@ -63,19 +63,19 @@ const PressRelease = ({ id }) => {
           />
         )}
       {gotPage &&
-        localStorage.getItem("passwordEntered") &&
+        sessionStorage.getItem("passwordEntered") &&
         isPasswordProtected && <Banner acf={acf} />}
       {gotPage &&
-        localStorage.getItem("passwordEntered") &&
+        sessionStorage.getItem("passwordEntered") &&
         isPasswordProtected && <PressIntro acf={acf} />}
       {gotPage &&
-        localStorage.getItem("passwordEntered") &&
+        sessionStorage.getItem("passwordEntered") &&
         isPasswordProtected && <PressContent acf={acf} />}
       {gotPage &&
-        localStorage.getItem("passwordEntered") &&
+        sessionStorage.getItem("passwordEntered") &&
         isPasswordProtected && <PressDownloads acf={acf} />}
       {gotPage &&
-        localStorage.getItem("passwordEntered") &&
+        sessionStorage.getItem("passwordEntered") &&
         isPasswordProtected && <ContactForm />}
 
       {gotPage && !isPasswordProtected && <Banner acf={acf} />}

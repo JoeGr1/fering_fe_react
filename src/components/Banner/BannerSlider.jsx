@@ -6,6 +6,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+
 const BannerSlider = ({ images, acf }) => {
   const sliderSettings = {
     arrows: false,
@@ -20,7 +23,7 @@ const BannerSlider = ({ images, acf }) => {
   };
 
   return (
-    <section className="banner">
+    <section className="banner banner-slider">
       <Slider {...sliderSettings}>
         {images.map((item, index) => {
           return (
@@ -56,6 +59,12 @@ const BannerSlider = ({ images, acf }) => {
           );
         })}
       </Slider>
+      <a href="#Intro" className="banner__scroll-btn">
+        <FontAwesomeIcon
+          icon={faChevronDown}
+          className="banner__scroll-btn-icon"
+        />
+      </a>
     </section>
   );
 };

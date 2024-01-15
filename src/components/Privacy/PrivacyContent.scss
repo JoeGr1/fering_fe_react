@@ -1,0 +1,18 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables";
+
+.privacy {
+  @include flex(center, center, column);
+
+  &__container {
+    @include flex(left, flex-start, column);
+    margin: 7rem 0;
+    padding: 0 2rem;
+  }
+
+  &__text {
+    & > *:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

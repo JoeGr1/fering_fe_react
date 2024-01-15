@@ -16,7 +16,7 @@ export const handlePasswordProtectedForm = (e, setState, acf) => {
   e.preventDefault();
 
   if (e.target[0].value == acf.password) {
-    localStorage.setItem("passwordEntered", "true");
+    sessionStorage.setItem("passwordEntered", "true");
     setState(false);
   }
 };

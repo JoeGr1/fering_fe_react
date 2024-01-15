@@ -30,7 +30,7 @@ const Story = ({ acf }) => {
   }, [acf]);
 
   return (
-    <section className="story">
+    <section className="story" id="Story">
       <div className="story__container container">
         <div className="story__content-half-1">
           {acf && image && (

@@ -94,4 +94,39 @@
       }
     }
   }
+
+  &-slider {
+    height: 100vh;
+    min-height: 60rem;
+  }
+
+  &__scroll-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2rem;
+
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 1px solid white;
+
+    @include flex(center, center, row);
+
+    z-index: 35;
+    cursor: pointer;
+
+    &-icon {
+      color: white;
+    }
+
+    &:hover {
+      border: 1px solid $lichen;
+      transition: 0.5s;
+      .banner__scroll-btn-icon {
+        color: $lichen;
+        transition: 0.5s;
+      }
+    }
+  }
 }

@@ -11,7 +11,8 @@
 
 html {
   font-size: 62.5%;
-  scroll-padding-top: 25rem !important;
+  // scroll-padding-top: 25rem !important;
+  scroll-behavior: smooth;
   width: 100vw;
 }
 

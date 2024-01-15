@@ -9,6 +9,9 @@ import { Link } from "react-router-dom";
 import { GET_IMAGE_URL } from "../../../utils/apiCalls";
 import { parseWysiwyg } from "../../../utils/helperFunctions";
 
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 const Intro = ({ acf }) => {
   const [image, setImage] = useState(null);
 
@@ -27,30 +30,34 @@ const Intro = ({ acf }) => {
     }
   }, [acf]);
 
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
-    <section className="intro">
+    <section className="intro" id="Intro">
+      {acf && image && (
+        <div className="intro__image-container">
+          <img
+            src={image.source_url}
+            alt="Intro Image"
+            className="intro__image"
+          />
+        </div>
+      )}
       <div className="intro__container container">
-        {acf && image && (
-          <div className="intro__imaage-container">
-            <img
-              src={image.source_url}
-              alt="Intro Image"
-              className="intro__image"
-            />
-          </div>
-        )}
-        <div className="intro__content-box">
-          {acf && <div className="intro__title">{acf.intro_title}</div>}
+        <div
+          className="intro__content-box"
+          data-aos="fade-right"
+          data-aos-duration="3000"
+        >
+          {acf && <div className="intro__title">{acf.intro_title.one}</div>}
+          {acf && (
+            <div className="intro__title-bold">{acf.intro_title.two}</div>
+          )}
           {acf && (
             <div className="intro__content">
               {parseWysiwyg(acf.intro_content)}
-            </div>
-          )}
-          {acf && acf.intro_button_link && (
-            <div className="intro__btn-container">
-              <Link to={acf.intro_button_link} className="intro__btn">
-                {acf.intro_button}
-              </Link>
             </div>
           )}
         </div>

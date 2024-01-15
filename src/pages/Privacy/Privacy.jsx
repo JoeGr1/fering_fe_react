@@ -1,22 +1,16 @@
 import React from "react";
 
-import "./Home.scss";
+import "./Privacy.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 import Banner from "../../components/Banner/Banner";
-import Intro from "../../components/Home/Intro/Intro";
-import SpecList from "../../components/Home/SpecList/SpecList";
-import Story from "../../components/Home/Story/Story";
-import HomeBreak from "../../components/Home/HomeBreak/HomeBreak";
-import VehiclePioneering from "../../components/Home/VehiclePioneering/VehiclePioneering";
-import SingleBanner from "../../components/Home/SingleBanner/SingleBanner";
-import Excellence from "../../components/Home/Excellence/Excellence";
+import PrivacyContent from "../../components/Privacy/PrivacyContent";
 
 import { GET_PAGE } from "../../utils/apiCalls";
 import ContactForm from "../../components/ContactForm/ContactForm";
 
-const Home = ({ id }) => {
+const Privacy = ({ id }) => {
   const [page, setPage] = useState(null);
   const [gotPage, setGotPage] = useState(false);
   const [acf, setAcf] = useState(null);
@@ -53,16 +47,10 @@ const Home = ({ id }) => {
     <div>
       {!gotPage && <p className="loading-tag">Loading...</p>}
       {gotPage && <Banner acf={acf} />}
-      {gotPage && <Intro acf={acf} />}
-      {gotPage && <VehiclePioneering acf={acf} />}
-      {gotPage && <SpecList acf={acf} />}
-      {gotPage && <Excellence acf={acf} />}
+      {gotPage && <PrivacyContent acf={acf} />}
       {gotPage && <ContactForm />}
-      {/* {gotPage && <Story acf={acf} />} */}
-      {/* {gotPage && <HomeBreak acf={acf} />} */}
-      {/* {gotPage && <SingleBanner acf={acf} />} */}
     </div>
   );
 };
 
-export default Home;
+export default Privacy;
